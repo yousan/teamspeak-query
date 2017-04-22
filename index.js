@@ -33,7 +33,7 @@ class TeamspeakQuery extends EventEmitter {
 
 		this.throttle = new Throttle({ 'max': 10, 'per': 3000, 'enable': host !== '127.0.0.1' && host !== 'localhost' });
 
-		if ( options.timeout ) {
+		if ( typeof(options.timeout) !== 'undefined' && parseInt(options.timeout) ) {
 			sock.setTimeout(parseInt(options.timeout));
         }
 
